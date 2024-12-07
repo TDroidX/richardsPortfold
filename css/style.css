@@ -1,4 +1,83 @@
+html{
+    scroll-behavior: smooth;
+}
 body {
-    background-color: #faf8f7;
+    background-color: #241e34;
     font-family: "Hubot Sans", sans-serif;
+}
+.foto1{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20%;
+    padding: 10px;
+}
+.texto{
+
+}
+header {
+    display: flex;
+    background-color: #f9f9f9; /* Fondo claro (opcional) */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    max-width: 800px; /* Ancho máximo del header */
+    margin: 20px auto; /* Centrado en la página */
+    margin-top: 10px;
+    flex-wrap: wrap;/* Permite que los elementos salten a una nueva fila si no caben */
+    padding: 20px;
+    justify-content: center; /* Centra el contenido */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+.nav{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding: 15px 20px;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+.body{
+    margin-top: 80px;
+}
+.TextoContent{
+    margin: 20px;
+    margin-left: 10vw;
+    color: white;
+}
+
+.projectContent{
+    border: 1px solid #7c64be; /* Borde Guia */
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten si no caben en la misma fila */
+    justify-content: center;
+    gap: 50px;
+}
+.cardProyectos{
+    position: relative;
+    width: 300px; /* Tamaño de las imágenes */
+    text-align: center;
+    padding: 10px;
+}
+.cardProyectos img{
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+}
+.cardProyectos .tituloCard{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.contact-me{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #7c64be;
 }
