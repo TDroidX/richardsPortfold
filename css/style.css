@@ -22,7 +22,7 @@ header {
     border-radius: 10px; /* Bordes redondeados */
     max-width: 800px; /* Ancho máximo del header */
     margin: 20px auto; /* Centrado en la página */
-    margin-top: 10px;
+    margin-top: 50px;
     flex-wrap: wrap;/* Permite que los elementos salten a una nueva fila si no caben */
     padding: 20px;
     justify-content: center; /* Centra el contenido */
@@ -46,6 +46,9 @@ header {
     margin-left: 10vw;
     color: white;
 }
+/* .proyectosCont{
+    margin-bottom: 20;
+} */
 
 .projectContent{
     border: 1px solid #7c64be; /* Borde Guia */
@@ -76,8 +79,163 @@ header {
 }
 
 .contact-me{
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
+    margin-top: 30px;
+    display: flex; /* Activar Flexbox */
+    flex-wrap: wrap;
+    justify-content: space-around; /* Separar texto y botón */
+    align-items: center; /* Alinear verticalmente al centro */
+    padding: 20px; /* Espaciado interno (opcional) */
     border: 1px solid #7c64be;
 }
+.textContact h1{
+    margin: 10;
+}
+.buttonContact{
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Containes skills */
+.caracteristicas{
+    margin-top: 50px;
+    border: 1px solid #7c64be;
+}
+.caracteristicas .skills{
+    border: 1px solid #7c64be;
+    margin: 10px;
+}
+.caracteristicas h1{
+    text-align: center;
+}
+
+/* containder about me */
+.containerAboutme{
+    border: 1px solid #7c64be;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.divAbout {
+    display: flex; /* Activa el modo flexbox */
+    flex-direction: column; /* Organiza los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente dentro del contenedor */
+    text-align: center; /* Centra el texto dentro del div */
+    padding: 20px; /* Espaciado interno alrededor del contenido */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    max-width: 600px; /* Tamaño máximo del contenedor para grandes pantallas */
+}
+
+.divAbout img {
+    width: 100%; /* Imagen escalable */
+    max-width: 300px; /* Tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción original */
+    border-radius: 10%; /* Bordes redondeados */
+    margin: 20px 0; /* Espaciado alrededor de la imagen */
+}
+
+.divAbout h1 {
+    margin-bottom: 10px; /* Espaciado inferior del título principal */
+    font-size: 2rem; /* Tamaño del texto del h1 */
+}
+
+.divAbout h3 {
+    margin-bottom: 20px; /* Espaciado inferior del subtítulo */
+    font-size: 1.2rem; /* Tamaño del texto del h3 */
+    color: #9c9c9c; /* Color más tenue para diferenciarlo */
+}
+
+@media (min-width: 768px) {
+    .divAbout {
+        max-width: 800px; /* Aumenta el ancho máximo en pantallas grandes */
+        padding: 40px; /* Espaciado extra para pantallas más grandes */
+    }
+
+    .divAbout img {
+        max-width: 400px; /* Imagen más grande en pantallas grandes */
+    }
+
+    .divAbout h1 {
+        font-size: 2.5rem; /* Texto más grande en pantallas grandes */
+    }
+
+    .divAbout h3 {
+        font-size: 1.5rem; /* Subtítulo más grande en pantallas grandes */
+    }
+}
+
+.divHistoria{
+    text-align: center;
+    text-justify: auto;
+    color: white;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+/* Linea del tiempo css */
+
+/* Contenedor general de la línea del tiempo */
+.timeline {
+    position: relative;
+    margin: 20px 0;
+    padding: 20px 0;
+    border-left: 3px solid #7c64be; /* Línea vertical */
+  }
+  
+  /* Elementos individuales de la línea del tiempo */
+  .timeline-item {
+    position: relative;
+    margin: 20px 0;
+    padding-left: 40px; /* Espaciado para el contenido */
+  }
+  
+  /* Indicadores circulares */
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px; /* Alinea con la línea */
+    width: 20px;
+    height: 20px;
+    background-color: #7c64be; /* Color del círculo */
+    border-radius: 50%;
+    border: 3px solid #fff; /* Borde blanco para resaltar */
+  }
+  
+  /* Contenido de los eventos */
+  .timeline-content {
+    padding: 10px 15px;
+    background: #1e1e1e; /* Fondo oscuro */
+    color: #fff;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Animaciones opcionales */
+  .timeline-content:hover {
+    background: #7c64be; /* Cambia color al pasar el ratón */
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .timeline {
+      border-left: none; /* Elimina la línea vertical */
+      border-top: 3px solid #7c64be; /* Hazla horizontal */
+      padding-left: 0;
+      padding-top: 20px;
+    }
+  
+    .timeline-item {
+      margin: 20px 0;
+      padding-left: 0;
+      text-align: center; /* Centra el contenido */
+    }
+  
+    .timeline-item::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
