@@ -13,17 +13,24 @@
 <body> 
     <div class="mainContainer">
         <nav class="nav">
+            <input type="checkbox" name="" id="check1">
+            <div class="logo">
+                <h1>/RTech\</h1>
+            </div>
             <ul>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#cursos-certificados">Cursos / Certificados</a></li>
+                <li><a href="">Proyectos</a></li>
+                <li><a href="">Skills</a></li>
+                <li><a href="">Sobre mí</a></li>
+                <li><a href="">Certificaciones</a></li>
+                <li><a href="">Contacto</a></li>
             </ul>
-            
-            <ul>
-                <button class="color">Logo</button>
-            </ul>
+            <div class="menu">
+                <label for="check1">
+                    <img src="./icons/bars-solid.svg" alt="Menu-Icon" class="iconoNav">
+                </label>
+            </div>
         </nav>
+          
         <header>
             <div class="photo">
                 
@@ -69,9 +76,24 @@
                 <h1>Skills</h1>
                 <div class="skills">
                     <h2>lenguajes:</h2>
+                    <button>HTML</button>
+                    <button>CSS</button>
+                    <button>JavaScript</button>
+                    <button>SQL</button>
+                    <button>MONGO</button>
+                    <button>DART</button>
+                    <button>C++/C#</button>
                 </div>
                 <div class="skills">
                     <h2>Heramientas:</h2>
+                    <button>Git</button>
+                    <button>GitHub</button>
+                    <button>NodeJS</button>
+                    <button>Express</button>
+                    <button>Figma</button>
+                    <button>MS Office</button>
+                    <button>VS Code</button>
+                    <button>Boostrap</button>
                 </div>
             </div>
 
@@ -123,11 +145,32 @@
             <button class="buttonContact">Contactame</button>
          </div>
 
+
         <!-- Footer para la página -->
-        <div class="footer">
-            
-        </div>
+        <footer class="footer">
+            <p>Ricardo Pizaña</p>
+            <div class="footer-links">
+                <a href="https://github.com" target="_blank" class="footer-button">
+                    <img src="./icons/github.png" alt="GitHub Icon" class="icon">
+                    GitHub
+                </a>
+                <a href="mailto:richard@example.com" class="footer-button">
+                    <img src="./icons/gmail.png" alt="Email Icon" class="icon">
+                    Gmail
+                </a>
+                <a href="https://instagram.com" target="_blank" class="footer-button">
+                    <img src="./icons/instagram.png" alt="Instagram Icon" class="icon">
+                    Instagram
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="footer-button">
+                    <img src="./icons/logotipo-de-linkedin.png" alt="LinkedIn Icon" class="icon">
+                    LinkedIn
+                </a>
+            </div>
+        </footer>
+
+        
     </div>
-    
+    <script src="./js/script.js"></script>
 </body>
 </html>

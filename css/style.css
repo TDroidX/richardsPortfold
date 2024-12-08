@@ -12,9 +12,6 @@ body {
     border-radius: 20%;
     padding: 10px;
 }
-.texto{
-
-}
 header {
     display: flex;
     background-color: #f9f9f9; /* Fondo claro (opcional) */
@@ -22,22 +19,95 @@ header {
     border-radius: 10px; /* Bordes redondeados */
     max-width: 800px; /* Ancho máximo del header */
     margin: 20px auto; /* Centrado en la página */
-    margin-top: 50px;
+    margin-top: 100px;
     flex-wrap: wrap;/* Permite que los elementos salten a una nueva fila si no caben */
     padding: 20px;
     justify-content: center; /* Centra el contenido */
     align-items: center; /* Centra el contenido verticalmente */
 }
+/* Navbar */
+
+.iconoNav{
+    width: 24px;
+    height: 24px;
+}
+
 .nav{
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    padding: 15px 20px;
     width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    box-shadow: 0 0 10px #000;
+    background: rgba(0, 0, 0, 0.5);
+}
+#check1{
+    display: none;
+}
+.nav .logo{
+   flex: 1;
+   color: #fff;
+   margin-left: 50px;
+   text-transform: uppercase;
+   font-size: 15px; 
+}
+.nav ul{
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+}
+.nav ul li{
+    list-style: none;
+}
+.nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+.nav ul li a:hover{
+    border-bottom: 2px solid cadetblue;
+}
+.nav .menu{
+    font-size: 2.5em;
+    display: none;
+}
+@media(max-width:1000px){
+    .nav ul{
+        position: fixed;
+        top: 100px;
+        right: -120%;
+        background: rgba(0, 0, 0, 0.5);
+        height: calc(100vh - 100px);
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        transition: right 0.5s linear;
+    }
+    .nav .menu{
+        display: block;
+        width: 100px;
+        text-align: center;
+    }
+    #check1:checked ~ ul{
+        right: 0;
+    }
+}
+@media(max-width:600px){
+    .nav .logo{
+        font-size: 10px;
+        margin-left: 8px;
+    }
+    .nav ul{
+        width: 100%;
+    }
 
 }
+
+/* Fin navbar */
 .body{
     margin-top: 80px;
 }
@@ -97,17 +167,57 @@ header {
 }
 
 /* Containes skills */
-.caracteristicas{
+.caracteristicas {
     margin-top: 50px;
     border: 1px solid #7c64be;
 }
-.caracteristicas .skills{
-    border: 1px solid #7c64be;
+
+.caracteristicas .skills {
     margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
 }
-.caracteristicas h1{
+
+.caracteristicas .skills button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto hover */
+.caracteristicas .skills button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* Efecto de escala en hover */
+}
+
+/* Títulos de las habilidades */
+.caracteristicas h1, .caracteristicas h2 {
     text-align: center;
 }
+
+/* Títulos de las habilidades */
+.caracteristicas h2 {
+    font-size: 1.5rem;
+}
+
+/* Media Queries para dispositivos pequeños */
+@media (max-width: 600px) {
+    .caracteristicas .skills {
+        justify-content: center;
+    }
+
+    .caracteristicas .skills button {
+        width: 80%; /* Botones más grandes en pantallas pequeñas */
+        margin: 10px auto;
+    }
+}
+
 
 /* containder about me */
 .containerAboutme{
@@ -239,3 +349,65 @@ header {
     }
   }
   
+
+    /* Footer */
+    .footer {
+        background-color: #333; /* Fondo oscuro */
+        color: white; /* Texto blanco */
+        text-align: center; /* Centra contenido */
+        padding: 20px 10px; /* Espaciado superior e inferior */
+        position: relative; /* Asegura el comportamiento estable del footer */
+        width: 100%; /* Ocupa todo el ancho */
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Sombra superior */
+    }
+
+    .footer p {
+        margin: 10px 0; /* Espaciado del texto */
+        font-size: 1.2rem; /* Tamaño de fuente */
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Permite que los enlaces salten a otra línea en pantallas pequeñas */
+        gap: 20px; /* Espaciado entre enlaces */
+        margin-top: 15px; /* Separación entre el texto y los enlaces */
+    }
+
+    .footer-button {
+        display: flex;
+        align-items: center; /* Alinea íconos y texto verticalmente */
+        color: white; /* Color del texto */
+        text-decoration: none; /* Sin subrayado */
+        transition: color 0.3s ease, transform 0.3s ease; /* Animación */
+        font-size: 1rem; /* Tamaño del texto */
+    }
+
+    .footer-button:hover {
+        color: #6c5ce7; /* Cambia el color al pasar el ratón */
+        transform: scale(1.05); /* Agranda ligeramente el botón */
+    }
+
+    .footer-button .icon {
+        width: 24px; /* Tamaño del ícono */
+        height: 24px;
+        margin-right: 8px; /* Espacio entre ícono y texto */
+    }
+
+    /* Media query para pantallas pequeñas */
+    @media (max-width: 600px) {
+        .footer {
+            font-size: 0.9rem; /* Texto más pequeño */
+            padding: 15px; /* Ajusta el padding */
+        }
+
+        .footer-links {
+            gap: 15px; /* Menor separación entre enlaces */
+        }
+
+        .footer-button .icon {
+            width: 20px; /* Íconos más pequeños */
+            height: 20px;
+            margin-right: 5px;
+        }
+    }
