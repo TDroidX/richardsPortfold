@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Portfold by Richard">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -11,22 +12,22 @@
     <title>Richards portfolio</title>
 </head>
 <body> 
-    <div class="mainContainer">
+    <div class="mainContainer" id="inicio">
         <nav class="nav" id="navBar">
             <input type="checkbox" name="" id="check1">
             <div class="logo">
-                <h1>/RTech\</h1>
+                <a href="#inicio"><h1>/RTech\</h1></a>
             </div>
             <ul>
-                <li><a href="">Proyectos</a></li>
-                <li><a href="">Skills</a></li>
-                <li><a href="">Sobre mí</a></li>
-                <li><a href="">Certificaciones</a></li>
-                <li><a href="">Contacto</a></li>
+                <li><a href="#proyectosCont">Proyectos</a></li>
+                <li><a href="#caracteristicas">Skills</a></li>
+                <li><a href="#containerAboutme">Sobre mí</a></li>
+                <li><a href="#certificaciones">Certificaciones</a></li>
+                <li><a href="#footer">Contacto</a></li>
             </ul>
             <div class="menu">
                 <label for="check1">
-                    <img src="./icons/bars-solid.svg" alt="Menu-Icon" class="iconoNav">
+                    <img src="./icons/menu.png" alt="Menu-Icon" class="iconoNav">
                 </label>
             </div>
         </nav>
@@ -38,74 +39,95 @@
                 
             </div>
             <div class="texto">
-                <h2>Hola ¿Qué tal?👋 Soy</h2>
-                <h1>Ricardo Pizaña de Santiago</h1> <!--Efecto de reescribir-->
-                <span>Ing. en desarrollo y gestión de aplicaciones </span>
+                <h1>Hola ¿Qué tal?👋 Soy</h1>
+                <h2>Ricardo Pizaña de Santiago</h2>
+                <center><span>Ing. En Desarrollo & Gestión de Software</span></center>
                 <br><br>
-                <button class="skills">Eficaz</button>
-                <button class="skills">Eficaz</button>
-                <button class="skills">Eficaz</button>
-                <button class="skills">Eficaz</button>
+                <button class="skills">
+                    <img srcset="./icons/analitico.png" alt="Analítico" class="icon" loading="lazy"> Analítico
+                </button>
+                <button class="skills">
+                    <img srcset="./icons/colaborar.png" alt="Colaborador" class="icon" loading="lazy"> Colaborador
+                </button>
+                <button class="skills">
+                    <img srcset="./icons/adaptacion.png" alt="Adaptable" class="icon" loading="lazy"> Adaptable
+                </button>
+                <button class="skills">
+                    <img srcset="./icons/autodidacta.svg" alt="Autodidacta" class="icon" loading="lazy"> Autodidacta
+                </button>
+                <button class="skills">
+                    <img srcset="./icons/resiliencia.png" alt="Resiliente" class="icon" loading="lazy"> Resiliente
+                </button>
+                
             </div>
         </header> 
         <div class="body">
 
         <!-- Proyectos -->
-            <div class="proyectosCont">
+            <div class="proyectosCont" id="proyectosCont">
                 <div class="TextoContent">
                     <h1>Proyectos</h1>
                     <p>¿Curiosidad? Aquí tienes mis mejores proyectos.</p>
                 </div>
                 <div class="projectContent">
                     <div class="cardProyectos">
-                        <img src="img/logo.png" alt="proyecto1" loading="lazy">
-                        <div class="tituloCard">Texto imagen</div>
+                        <a href="https://github.com/XanderEsparza/pagina_cursos_nodejs.git" target="_blank">
+                            <img srcset="img/cursos.jpg" alt="proyecto1" loading="lazy">
+                            <div class="tituloCard">Página de cursos con NodeJS</div>
+                        </a>
                     </div>
                     <div class="cardProyectos">
-                        <img src="img/logo.png" alt="proyecto1" loading="lazy">
-                        <div class="tituloCard">Texto imagen</div>
+                        <a href="https://github.com/LitzyDiaz0/ApiElectro.git" target="_blank">
+                            <img srcset="img/api.jpg" alt="proyecto1" loading="lazy">
+                            <div class="tituloCard">API NodeJS</div>
+                        </a>
                     </div>
                     <div class="cardProyectos">
-                        <img src="img/logo.png" alt="proyecto1" loading="lazy">
-                        <div class="tituloCard">Texto imagen</div>
+                        <a href="https://github.com/TDroidX/E-Book-Flutter.git" target="_blank">
+                            <img srcset="img/app.jpg" alt="proyecto1" loading="lazy">
+                            <div class="tituloCard">E-Book Reader con Dart</div>
+                        </a>
                     </div>
                 </div>
+                
             </div>
 
             <!-- Skills -->
-            <div class="caracteristicas">
+            <div class="caracteristicas" id="caracteristicas">
                 <h1>Skills</h1>
                 <div class="skills">
-                    <h2>lenguajes:</h2>
-                    <button>HTML</button>
-                    <button>CSS</button>
-                    <button>JavaScript</button>
-                    <button>SQL</button>
-                    <button>MONGO</button>
-                    <button>DART</button>
-                    <button>C++</button>
-                    <button>C#</button>
+                    <h2>Lenguajes:</h2>
+                    <button class="html">HTML</button>
+                    <button class="css">CSS</button>
+                    <button class="javascript">JavaScript</button>
+                    <button class="sql">SQL</button>
+                    <button class="mongo">MONGO</button>
+                    <button class="dart">DART</button>
+                    <button class="cpp">C++</button>
+                    <button class="csharp">C#</button>
                 </div>
                 <div class="skills">
-                    <h2>Heramientas:</h2>
-                    <button>Git</button>
-                    <button>GitHub</button>
-                    <button>NodeJS</button>
-                    <button>Express</button>
-                    <button>Figma</button>
-                    <button>MS Office</button>
-                    <button>VS Code</button>
-                    <button>Boostrap</button>
+                    <h2>Herramientas:</h2>
+                    <button class="git">Git</button>
+                    <button class="github">GitHub</button>
+                    <button class="nodejs">NodeJS</button>
+                    <button class="express">Express</button>
+                    <button class="figma">Figma</button>
+                    <button class="msoffice">MS Office</button>
+                    <button class="vscode">VS Code</button>
+                    <button class="bootstrap">Bootstrap</button>
                 </div>
             </div>
+            
 
 
         <!----Sobre mí-->
-            <div class="containerAboutme">
+            <div class="containerAboutme" id="containerAboutme">
                 <div class="divAbout">
                     <h1>Sobre mí</h1>
-                    <h3>Agradezco tu visita, te invito a conocer más sobre mi identidad y trayectoria</h3>
-                    <img src="./img/foto1.jpg" alt="Foto Richard">
+                    <h3>Agradezco tu visita, te invito a conocer más sobre mi identidad y trayectoria.</h3>
+                    <img srcset="./img/foto1.jpg" alt="Foto Richard" loading="lazy loading="lazy"">
+                    <button class="buttonCV"><a href="./assets/cv/Curriculum Ricardo Pizaña.pdf" download>Descargar CV</a></button>
                 </div>
                 <div class="divHistoria">
                     <h2>Historia</h2>
@@ -119,53 +141,95 @@
                 <div class="timeline">
                     <div class="timeline-item">
                       <div class="timeline-content">
-                        <h3>2022</h3>
-                        <p>Comencé mi carrera en desarrollo web.</p>
+                        <h3>2018 -> 2021</h3>
+                        <p>Comencé mi carrera en el Colegio de Estudios Científicos y Tecnológicos de Aguascalientes (CECyTEA).</p>
                       </div>
                     </div>
                     <div class="timeline-item">
                       <div class="timeline-content">
-                        <h3>2023</h3>
-                        <p>Finalicé mi primer proyecto profesional.</p>
+                        <h3>2021 -> 2023</h3>
+                        <p>Ingrese a la Universidad Tecnológica del Norte de Aguascalientes (UTNA).</p>
+                        <p>Como Técnico Superior Universitario en Tecnologías de la Información área Desarrollo de Software Multiplataforma.</p>
                       </div>
                     </div>
                     <div class="timeline-item">
                       <div class="timeline-content">
-                        <h3>2024</h3>
-                        <p>Desarrollé mi portafolio personal.</p>
+                        <h3>2023 -> Actualidad</h3>
+                        <p> Universidad Tecnológica del Norte de Aguascalientes (UTNA).</p>
+                        <p>Curso Ingenieria en Desarrollo y Gestión de Software.</p>
                       </div>
                     </div>
                   </div>
                   
             </div>
         </div>
+        <!-- Sección certificaciones -->
+        <div class="divcertificaciones" id="certificaciones">
+            <h1>Certificaciones</h1>
+            <div class="cards-container">
+                <div class="cardCertificaciones">
+                    <h2>Certificado Blockchain</h2>
+                    <p>Blockdemy / &copy; Inadaptados</p>
+                    <button><a href="assets/certificates/Blockchain_191.pdf" download>Descargar</a></button>
+                </div>
+                <div class="cardCertificaciones">
+                    <h2>Certificado Desarrollo con AI</h2>
+                    <p>Blockdemy / &copy; Inadaptados</p>
+                    <button>
+                        <a href="assets/certificates/IA_191.pdf" download>Descargar</a>
+                    </button>
+                      
+                </div>
+                <div class="cardCertificaciones">
+                    <h2>Certificado Negociación Empresarial</h2>
+                    <p>Santander Open Academy</p>
+                    <button><a href="assets/certificates/Diploma_Santander.pdf" download>Descargar</a></button>
+                </div>
+                <div class="cardCertificaciones">
+                    <h2>Certificado Azle ICP Web 3.0</h2>
+                    <p>ICP HUB LATAM</p>
+                    <button><a href="assets/certificates/Jose Ricardo Pizaña de Santiago azle.pdf" download>Descargar</a></button>
+                </div>
+                <div class="cardCertificaciones">
+                    <h2>Certificado Motoko ICP Web 3.0</h2>
+                    <p>ICP HUB LATAM</p>
+                    <button><a href="assets/certificates/Jose Ricardo Pizaña de Santiago.pdf" download>Descargar</a></button>
+                </div>
+            </div>
+        </div>
+
         <!-- Sección contactame -->
-         <div class="contact-me">
+        <div class="contact-me">
             <div class="textContact">
                 <h1>¿Te interesa desarrollar algún proyecto?</h1>
             </div>
-            <button class="buttonContact">Contactame</button>
-         </div>
+            <a href="https://wa.me/+524651244306" class="buttonContact">
+                <img src="./icons/whatsapp.png" alt="WhatsApp" class="icon" loading="lazy">
+                ¡Contáctame!
+            </a>
+        </div>
+        
+        
 
 
         <!-- Footer para la página -->
-        <footer class="footer">
+        <footer class="footer" id="footer">
             <p>Ricardo Pizaña</p>
             <div class="footer-links">
-                <a href="https://github.com" target="_blank" class="footer-button">
-                    <img src="./icons/github.png" alt="GitHub Icon" class="icon">
+                <a href="https://github.com/TDroidX" target="_blank" class="footer-button">
+                    <img srcset="./icons/github.png" alt="GitHub Icon" class="icon" loading="lazy">
                     GitHub
                 </a>
-                <a href="mailto:richard@example.com" class="footer-button">
-                    <img src="./icons/gmail.png" alt="Email Icon" class="icon">
+                <a href="mailto:ricardopizanadesantiagoricardo@gmail.com" class="footer-button">
+                    <img srcset="./icons/gmail.png" alt="Email Icon" class="icon" loading="lazy">
                     Gmail
                 </a>
-                <a href="https://instagram.com" target="_blank" class="footer-button">
-                    <img src="./icons/instagram.png" alt="Instagram Icon" class="icon">
+                <a href="https://www.instagram.com/jrichard.21/" target="_blank" class="footer-button">
+                    <img srcset="./icons/instagram.png" alt="Instagram Icon" class="icon" loading="lazy">
                     Instagram
                 </a>
-                <a href="https://linkedin.com" target="_blank" class="footer-button">
-                    <img src="./icons/logotipo-de-linkedin.png" alt="LinkedIn Icon" class="icon">
+                <a href="https://www.linkedin.com/in/jos%C3%A9-ricardo-piza%C3%B1a-de-satiago-1a1233273/" target="_blank" class="footer-button">
+                    <img srcset="./icons/logotipo-de-linkedin.png" alt="LinkedIn Icon" class="icon" loading="lazy">
                     LinkedIn
                 </a>
             </div>

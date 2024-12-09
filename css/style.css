@@ -1,23 +1,29 @@
 html{
     scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
 }
 body {
-    background-color: #241e34;
+    background-color: #161422;
     font-family: "Hubot Sans", sans-serif;
+    width: 100%;
+    overflow-x: hidden;
 }
-.foto1{
-    width: 300px;
-    height: 300px;
+.foto1 {
+    width: 100%;
+    max-width: 350px; /* Tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
     object-fit: cover;
     border-radius: 20%;
     padding: 10px;
 }
+
 header {
     display: flex;
-    background-color: #f9f9f9; /* Fondo claro (opcional) */
-    border: 1px solid #ddd; /* Borde sutil */
+    background-color: #161422; /* Fondo claro (opcional) */
+    border: 1px solid sy#ddd; /* Borde sutil */
     border-radius: 10px; /* Bordes redondeados */
-    max-width: 800px; /* Ancho máximo del header */
+    max-width: 1200px; /* Ancho máximo del header */
     margin: 20px auto; /* Centrado en la página */
     margin-top: 200px;
     flex-wrap: wrap;/* Permite que los elementos salten a una nueva fila si no caben */
@@ -25,6 +31,63 @@ header {
     justify-content: center; /* Centra el contenido */
     align-items: center; /* Centra el contenido verticalmente */
 }
+header .texto {
+    text-align: center; /* Centra el texto y los botones en dispositivos pequeños */
+}
+header .texto h1{
+    color: #6a0dad;
+}
+header .texto h2{
+    color: #fff;
+}
+header .texto span{
+    color: #fff;
+}
+
+header .skills {
+    display: inline-flex; /* Alinea ícono y texto en línea */
+    align-items: center; /* Centra ícono y texto verticalmente */
+    background-color: #6a0dad;
+    color: white;
+    border: 2px solid #9b4fda;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px auto; /* Agrega margen automático para centrar los botones */
+    text-decoration: none; /* Evita subrayados */
+    transition: all 0.3s ease;
+    width: fit-content; /* Se ajusta al contenido del botón */
+}
+
+header .skills:hover {
+    background-color: #9b4fda;
+    box-shadow: 0 4px 10px rgba(155, 79, 218, 0.6);
+    transform: scale(1.1);
+}
+
+header .skills .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; /* Espaciado entre ícono y texto */
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Cambia el diseño a una columna en pantallas pequeñas */
+        align-items: center;
+    }
+
+    header .skills {
+        width: 90%; /* Los botones ocupan casi todo el ancho de la pantalla */
+        max-width: 400px; /* Límite de tamaño máximo */
+        justify-content: center; /* Centra el contenido dentro del botón */
+        margin: 10px 0; /* Separación vertical entre botones */
+    }
+}
+
+
 
 /* Efecto maquina de escribir */
 span {
@@ -34,14 +97,15 @@ span {
     width: 43ch; /* Ancho máximo del texto */
     overflow: hidden; /* Oculta el texto que se escribe/borrará */
     white-space: nowrap; /* Evita el salto de línea */
-    animation: typing 7s steps(44) infinite, blink 0.5s step-end infinite;
+    animation: typing 7s steps(40) infinite, blink 0.5s step-end infinite;
+    text-transform: uppercase;
 }
 
 /* Animación para escribir, pausar y borrar */
 @keyframes typing {
     0% { width: 0; }           /* Comienza sin texto */
-    50% { width: 44ch; }       /* Escribe todo el texto */
-    70% { width: 44ch; }       /* Mantiene el texto completo por 3 segundos */
+    50% { width: 40ch; }       /* Escribe todo el texto */
+    70% { width: 40ch; }       /* Mantiene el texto completo por 3 segundos */
     100% { width: 0; }         /* Borra todo el texto */
 }
 
@@ -54,12 +118,12 @@ span {
 /* Navbar */
 
 .iconoNav{
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
 }
 
 .nav{
-    width: 100%;
+    width: 100vw;
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -79,7 +143,11 @@ span {
    color: #fff;
    margin-left: 50px;
    text-transform: uppercase;
-   font-size: 15px; 
+   font-size: 15px;
+}
+.nav .logo a{
+    text-decoration: none;
+    color: inherit;
 }
 .nav ul{
     flex: 2;
@@ -100,7 +168,7 @@ span {
     border-bottom: 2px solid #7c64be;
 }
 .nav .menu{
-    font-size: 2.5em;
+    font-size: 3.5em;
     display: none;
 }
 @media(max-width:1000px){
@@ -140,31 +208,36 @@ span {
     margin-top: 80px;
 }
 .TextoContent{
-    margin: 20px;
-    margin-left: 10vw;
+    text-align: center;
     color: white;
 }
-/* .proyectosCont{
-    margin-bottom: 20;
-} */
-
+/* Proyectos */
 .projectContent{
-    border: 1px solid #7c64be; /* Borde Guia */
     display: flex;
     flex-wrap: wrap; /* Permite que las imágenes se ajusten si no caben en la misma fila */
     justify-content: center;
     gap: 50px;
+    margin: 5px 0 0 5px;
 }
 .cardProyectos{
     position: relative;
     width: 300px; /* Tamaño de las imágenes */
     text-align: center;
     padding: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .cardProyectos img{
-    width: 100%;
+    width: 100%; /* Asegura que la imagen cubra todo el div */
+    height: 100%; /* Mantiene la proporción */
     border-radius: 15px;
+    object-fit: cover; /* Ajusta la imagen proporcionalmente para que cubra el contenedor */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+    transition: transform 0.3s ease-in-out;
+}
+.cardProyectos:hover img {
+    transform: scale(1.05); /* Pequeña escala para el efecto de hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Mayor sombra para resaltar */
 }
 .cardProyectos .tituloCard{
     position: absolute;
@@ -174,31 +247,61 @@ span {
     padding: 5px 10px;
     border-radius: 8px;
     font-size: 14px;
+    transition: transform 0.3s ease-in-out; /* Animación similar a la imagen */
+}
+.cardProyectos:hover .tituloCard {
+    transform: scale(1.05); /* Escala para el efecto de hover */
 }
 
-.contact-me{
+/* Seccion contactame */
+
+.contact-me {
     margin-top: 30px;
     display: flex; /* Activar Flexbox */
     flex-wrap: wrap;
     justify-content: space-around; /* Separar texto y botón */
     align-items: center; /* Alinear verticalmente al centro */
-    padding: 20px; /* Espaciado interno (opcional) */
-    border: 1px solid #7c64be;
+    padding: 20px; /* Espaciado interno */
 }
-.textContact h1{
-    margin: 10;
+
+.textContact h1 {
+    margin: 10px 0;
     text-align: center;
+    color: #fff;
 }
-.buttonContact{
+
+.buttonContact {
+    display: flex; /* Para alinear el texto e ícono */
+    align-items: center; /* Centrar verticalmente el ícono */
+    justify-content: center; /* Centrar contenido */
+    gap: 10px; /* Espacio entre ícono y texto */
     padding: 10px 20px;
     font-size: 16px;
+    color: white;
+    background-color: #6a0dad; /* Color morado */
+    border: 2px solid white; /* Borde blanco */
+    border-radius: 20px; /* Bordes redondeados */
     cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
+.buttonContact:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+    background-color: #5e4a9d; /* Un morado más oscuro en hover */
+}
+
+.icon {
+    width: 20px; /* Tamaño del icono */
+    height: 20px;
+    display: inline-block; /* Asegura alineación */
+}
+
 
 /* Containes skills */
 .caracteristicas {
     margin-top: 50px;
-    border: 1px solid #7c64be;
+    color: #fff;
 }
 
 .caracteristicas .skills {
@@ -212,18 +315,37 @@ span {
 .caracteristicas .skills button {
     margin: 10px;
     padding: 10px 20px;
-    background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Colores específicos */
+button.html { background-color: #E44D26; } /* HTML */
+button.css { background-color: #1572B6; } /* CSS */
+button.javascript { background-color: #c4b01c; color: #000; } /* JavaScript */
+button.sql { background-color: #00758F; } /* SQL */
+button.mongo { background-color: #4DB33D; } /* MongoDB */
+button.dart { background-color: #00B4AB; } /* Dart */
+button.cpp { background-color: #00599C; } /* C++ */
+button.csharp { background-color: #178600; } /* C# */
+
+button.git { background-color: #F34F29; } /* Git */
+button.github { background-color: #181717; } /* GitHub */
+button.nodejs { background-color: #026E00; } /* NodeJS */
+button.express { background-color: #000000; } /* Express */
+button.figma { background-color: #F24E1E; } /* Figma */
+button.msoffice { background-color: #D83B01; } /* MS Office */
+button.vscode { background-color: #007ACC; } /* VS Code */
+button.bootstrap { background-color: #563D7C; } /* Bootstrap */
+
 /* Efecto hover */
 .caracteristicas .skills button:hover {
-    background-color: #0056b3;
-    transform: scale(1.1); /* Efecto de escala en hover */
+    transform: scale(1.1);
+    filter: brightness(85%);
 }
+
 
 /* Títulos de las habilidades */
 .caracteristicas h1, .caracteristicas h2 {
@@ -247,10 +369,99 @@ span {
     }
 }
 
+/* Container Certificaciones */
+.divcertificaciones {
+    margin: 35px 0px 5px 0px;
+    padding: 20px;
+    background-color: #161422; /* Fondo oscuro */
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Título principal */
+.divcertificaciones h1 {
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor de las tarjetas */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias filas */
+    justify-content: center; /* Centra las tarjetas en la fila */
+    gap: 30px; /* Espaciado entre las tarjetas */
+}
+
+/* Tarjetas individuales */
+.cardCertificaciones {
+    background-color: #e2d1d1; /* Fondo blanco */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 15px;
+    width: calc(33.33% - 20px); /* Máximo de 3 tarjetas por fila */
+    max-width: 300px; /* Ancho máximo de cada tarjeta */
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s; /* Animación */
+}
+
+/* Animación hover para tarjetas */
+.cardCertificaciones:hover {
+    transform: scale(1.05); /* Efecto de aumento */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+/* Título de la tarjeta */
+.cardCertificaciones h2 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    color: #6a0dad; /* Color destacado */
+}
+
+/* Descripción de la tarjeta */
+.cardCertificaciones p {
+    margin: 0 0 15px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Botón dentro de la tarjeta */
+.cardCertificaciones button {
+    background-color: #6a0dad;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.cardCertificaciones button:hover {
+    background-color: #5a4594; /* Color más oscuro al pasar el mouse */
+}
+
+/* Enlace dentro del botón */
+.cardCertificaciones button a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Responsive para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .cardCertificaciones {
+        width: calc(50% - 20px); /* Máximo de 2 tarjetas por fila */
+    }
+}
+
+@media (max-width: 480px) {
+    .cardCertificaciones {
+        width: 100%; /* Una tarjeta por fila */
+    }
+}
+
 
 /* containder about me */
 .containerAboutme{
-    border: 1px solid #7c64be;
     margin-top: 50px;
     margin-bottom: 10px;
 }
@@ -265,6 +476,45 @@ span {
     margin: 0 auto; /* Centra el contenedor horizontalmente */
     max-width: 600px; /* Tamaño máximo del contenedor para grandes pantallas */
 }
+.containerAboutme .buttonCV{
+    display: inline-flex; /* Alinea ícono y texto en línea */
+    align-items: center; /* Centra ícono y texto verticalmente */
+    background-color: #6a0dad;
+    color: white;
+    border: 2px solid #9b4fda;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 5px auto; /* Agrega margen automático para centrar los botones */
+    text-decoration: none; /* Evita subrayados */
+    transition: all 0.3s ease;
+    width: fit-content; /* Se ajusta al contenido del botón */
+}
+
+.containerAboutme .buttonCV:hover{
+    background-color: #9b4fda;
+    box-shadow: 0 4px 10px rgba(155, 79, 218, 0.6);
+    transform: scale(1.1);
+}
+.containerAboutme .buttonCV a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+
+
+
+
+/* header .skills .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    flex-shrink: 0;
+} */
 
 .divAbout img {
     width: 100%; /* Imagen escalable */
@@ -277,12 +527,13 @@ span {
 .divAbout h1 {
     margin-bottom: 10px; /* Espaciado inferior del título principal */
     font-size: 2rem; /* Tamaño del texto del h1 */
+    color: #faf8f8;
 }
 
 .divAbout h3 {
     margin-bottom: 20px; /* Espaciado inferior del subtítulo */
     font-size: 1.2rem; /* Tamaño del texto del h3 */
-    color: #9c9c9c; /* Color más tenue para diferenciarlo */
+    color: #eee7e7; /* Color más tenue para diferenciarlo */
 }
 
 @media (min-width: 768px) {
@@ -317,9 +568,9 @@ span {
 /* Contenedor general de la línea del tiempo */
 .timeline {
     position: relative;
-    margin: 20px 0;
+    margin: 20px 0 0 20px;
     padding: 20px 0;
-    border-left: 3px solid #7c64be; /* Línea vertical */
+    border-left: 3px solid #6a0dad; /* Línea vertical */
   }
   
   /* Elementos individuales de la línea del tiempo */
@@ -334,10 +585,10 @@ span {
     content: '';
     position: absolute;
     top: 0;
-    left: -10px; /* Alinea con la línea */
+    left: -12px; /* Alinea con la línea */
     width: 20px;
     height: 20px;
-    background-color: #7c64be; /* Color del círculo */
+    background-color: #6a0dad; /* Color del círculo */
     border-radius: 50%;
     border: 3px solid #fff; /* Borde blanco para resaltar */
   }
@@ -353,7 +604,7 @@ span {
   
   /* Animaciones opcionales */
   .timeline-content:hover {
-    background: #7c64be; /* Cambia color al pasar el ratón */
+    background: #6a0dad; /* Cambia color al pasar el ratón */
     transform: translateY(-5px);
     transition: all 0.3s ease;
   }
@@ -361,7 +612,7 @@ span {
   @media (max-width: 768px) {
     .timeline {
       border-left: none; /* Elimina la línea vertical */
-      border-top: 3px solid #7c64be; /* Hazla horizontal */
+      border-top: 3px solid #6a0dad; /* Hazla horizontal */
       padding-left: 0;
       padding-top: 20px;
     }
